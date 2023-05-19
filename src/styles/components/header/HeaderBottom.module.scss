@@ -1,0 +1,113 @@
+.subcategoryWrapper{
+    box-shadow: 0px 60px 44px -16px rgba(0, 0, 0, 0.2);
+    background: #FFFFFF;
+    padding: 31px 40px;
+    position: absolute;
+    left:0;
+    right:0;
+    width:100%;
+    z-index: 122112;
+    top: 100%;
+    // display:none;
+    // &.active{
+    //     display:block;
+    // }
+    .catHead{
+        font-weight: 600;
+        font-size: 24px;
+        color: #212121;
+    }
+    .subCatList{
+        margin-top: 32px;
+       li{
+            font-weight: 400;
+            font-size: 18px;
+            margin-bottom: 22px;
+            color: #212121;
+            &:last-child{
+                margin-bottom: 0;
+            }
+       }
+    }
+    .shopByBrandsWrapper{
+        .shopByBrands{
+            font-weight: 500;
+            font-size: 14px;
+            color: #212121;
+        }
+    }
+    .catItem {
+        // &:not(:hover)
+        // {
+        //     .subcategoryWrapper{
+        //         display:none;
+        //      }
+        // }
+       &:hover{
+         .subcategoryWrapper{
+            &.active{
+                display: block;
+                position: absolute;
+            top: 180px;
+            z-index: 9;
+            }
+            
+         }
+       }
+    }
+    
+}
+
+
+@media (max-width:1023px){
+    .headerBottomWrapper{
+        .mblMenuHead{
+            padding: 12px 10px;
+            border-bottom: 1px solid #D5D5D5;
+            img{
+                width: 69px;
+                height: auto;
+            }
+        }
+            .menuScroll{
+                overflow-y: scroll;
+                margin: 0;
+                height: calc(100vh - 82px);
+                padding: 10px 16px;
+                
+            }
+            .catItem{
+                margin: 24px 0;
+            }
+
+        
+        
+        .subcategoryWrapper{
+            padding: 31px 16px;
+            box-shadow: unset;
+            top: 0;
+            .catHead{
+                font-size: 18px;
+            }
+            .subCatList{
+                margin-top: 18px;
+                li{
+                    font-size: 16px;
+                    margin-bottom: 12px;
+                    cursor: pointer;
+                }
+            }
+            .shopByBrandsWrapper{
+                margin-top: 24px;
+                border-top: 1px solid #D5D5D5;
+                padding-top: 24px;
+                .shopByBrands{
+                    font-weight: 500;
+                   font-size: 14px;
+                   color: #212121;
+                }
+            }
+        }
+    }
+    
+}

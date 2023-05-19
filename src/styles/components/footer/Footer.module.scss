@@ -1,0 +1,189 @@
+.footerWrapper {
+	background-color: #FAFBFB;
+    padding: 67px 16px 0px 16px;
+    @media (max-width:1023px){
+        padding: 67px 20px 20px 20px;
+    }
+    @media (max-width:767px){
+       padding: 30px 16px; 
+    }
+	.bgWhite{
+        background-color: #fff;
+    }
+    .footerlogoImg{
+        width: 100px;
+        height: auto;
+        @media (max-width: 767px){
+            width: 90px;
+        }
+        @media (max-width: 639px) {  
+            width: 70px;
+        }
+    }
+    
+    .footerTopSec {
+        background-color: #EAF0F3;
+        border-radius: 20px;
+        padding: 60px 70px;
+        margin-bottom: 67px;
+        @media(max-width:1024px){
+            padding: 30px 0px 0 0;
+            margin-bottom: 30px;
+        }
+        .revolutionSec {
+            align-items: center;
+            h6 {
+                font-size: 47px;
+                font-weight: 700;
+                padding: 0 10px;
+                @media(max-width:1199px){
+                    font-size: 35px;
+                }
+                @media(max-width:1023px){
+                    font-size: 35px;
+                }
+                @media (max-width: 639px) {  
+                    font-size: 25px;
+                    padding: 0 5px;
+                }
+            }
+            @media (max-width: 1023px) { 
+                margin: 0 0 23px 0;
+            }
+            
+        }
+        .appStore {
+            margin: 0 8px;
+            @media(max-width:1199px){
+                img{
+                    width: 127.6px;
+                }
+            }
+            @media (max-width:767px){
+              img{
+                width: 140px;
+              }
+            }
+            @media (max-width:639px){
+                margin: 0 2px;
+                img{
+                    width: 110px;
+                  }
+            }
+            @media (max-width:374px){
+                margin: 0 4px;
+                img{
+                    width: 90px;
+                  }
+            }
+            &.qrCode{
+                @media(max-width:1199px){
+                     width: 45px;
+                                    }
+                @media(max-width:1023px){
+                    width: 55px;
+                }
+                @media(max-width:767px){
+                     width: 42px;
+                }
+                @media (max-width:639px){
+                     width: 35px;
+                }
+                @media (max-width:374px){
+                   width: 30px;
+                }
+            }
+        }
+        .becomePartner {
+            padding-left: 40px;
+            .btn{
+                &.btn-lg{
+                    padding: 12px 24px;
+                  }
+            }
+            @media(max-width:1199px){
+                margin-bottom: 0;
+                padding-left: 20px;
+            }
+            @media (max-width: 1024px) { 
+                margin-bottom: 0px;
+                padding-left: 0px;
+                span{
+                    font-weight: 700;
+                    font-size: 12px;
+                    margin: 13px 0; 
+                }
+                a{
+                    .btn{
+                        &.btn-lg{
+                            padding: 12px 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footerBottomWrapper {
+        .leftSec {
+            a {
+                font-size: 16px;
+                color: #212121;
+                padding-right: 16px;
+                
+            }
+        }
+        .rightSec {
+            @media(max-width:1023px){
+                margin: 20px 0;
+            }
+            .footerBottomlogoImg{
+                width: 88px;
+                height: auto
+            }
+            .socialLinks{
+                a {
+                    color: #212121;
+                    padding-right: 3px;
+                    padding-left: 3px;
+                    height: 14px;
+                    display: flex;
+                }
+            }
+            span {
+                font-weight: 400;
+                font-size: 12px;
+                padding-right: 10px;
+                
+            }
+        }
+    }
+    .copyrightsSec {
+        margin-top: 23px;
+        margin-bottom: 10px;
+        p {
+            color: #212121CC;
+            font-size: 12px;
+            font-weight: 400;
+            @media(max-width:639px){
+                margin-top: 20px;
+            }
+        }
+        a {
+            font-size: 12px;
+            color: #212121CC;
+            
+            span {
+                color: #212121CC;
+            }
+        }
+        span {
+            color: #212121CC;
+        }
+    }
+
+    @media (max-width: 767px) {  }
+
+}
+
+
+

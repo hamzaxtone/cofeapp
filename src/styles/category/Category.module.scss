@@ -1,0 +1,147 @@
+@import '../variables.scss';
+
+.categoryListingLeft{
+    padding-right: 25px;
+    @media (max-width: 767px){
+        position: fixed;
+        background-color: #fff;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: -100%;
+        z-index: -1;
+        overflow-y: auto;
+        padding: 60px 16px 40px;
+        pointer-events: none;
+        opacity: 0;
+        transition: 0.3s;
+        .sidebarTopListing{
+           position: fixed;
+           top: 0;
+            width: 100%;
+            background-color: #fff;
+            z-index: 1000;
+            padding: 10px 32px 10px 0px;
+            .logo{
+                margin: 0 auto;
+            }
+        }
+    }
+}
+.sidebarListingOpen{
+    overflow-y: hidden;
+    .categoryListingLeft{
+        @media (max-width: 767px){
+            z-index: 100;
+            opacity: 1;
+            left: 0;
+            pointer-events: all;
+        }
+    }
+}
+.taxonomyItem{
+    margin-bottom: 14px;
+    &.taxonomyItemActive{
+        .taxtTitle{
+            position: relative;
+            &:before{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 78px;
+                box-shadow: 0 0px 0px 1px rgba(8, 191, 175, 1);
+            }
+            svg{
+                transform: rotate(180deg);
+    
+            }
+        }
+    }
+    .taxtTitle{
+        color: #212121;
+        border-bottom: 1px solid #E5E5E5;
+        padding: 8px 0 14px;
+        cursor: pointer;
+        svg{
+            transition: 0.3s;
+        }
+    }
+    .taxonomyParentItems{
+        margin-left: 16px;
+        @media (max-width: 767px){
+            margin-left: 10px;
+        }
+        .taxonomyParentChildren{
+            .taxonomyParentTitle{
+                color: #4D4D4D;
+            }
+            .taxonomyItemsInner{
+                margin-left: 16px;
+                @media (max-width: 767px){
+                    margin-left: 10px;
+                }
+            }
+
+        }   
+    }
+}
+.categoryFilterWrp{
+    .categoryFilterLeft{
+        h3{
+            color: #212121;
+            span{
+                position: relative;
+                top: -6px;
+            }
+        }
+
+    }
+    .categoryFilterRight{
+        span{
+            color: #7A7A7A;
+        }
+        button ,
+        svg{
+            color: #212121;
+        }
+
+    }
+
+}
+
+/* paginnation and tags */
+.paginationWrapper{
+
+}
+.clearBtn{
+    color: $primary-dream-100;
+}
+/* paginnation and tags */
+
+/* rangeValueBx */
+.rangeValueBx{
+      .rangeValueInner{
+            border: 1px solid #D5D5D5;
+            padding: 12px 8px 10px;
+            flex: 1;
+            span{
+                margin-right: 5px;
+            }
+      }
+}
+  /* rangeValueBx */
+
+
+  /* filter on mobile */
+  .filterOnMobile{
+    border: 1px solid #CACACA;
+  }
+  .mobileFilterWrp{
+    .filterTitle{
+        color: #111111;
+    }
+  }
+/* filter on mobile */
+
+

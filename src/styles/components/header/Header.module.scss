@@ -1,0 +1,115 @@
+.searchPanelDropdown{
+    z-index: 0;
+    padding: 0px 20px 20px;
+    border-radius: 5px;
+    display: none;
+    pointer-events: none;
+    .searchTitle,
+    span{
+        color: #212121;
+    }
+    .searchItem{
+        border: 1px solid transparent;
+        transition: 0.3s;
+        &:hover{
+            background-color: #F7F7F7;
+            border-color: #D3D3D3;
+        }
+        .searchItemImage{
+            background-color: #F7F7F7;
+            padding: 4px 12px 4px;
+            flex: 0 0 110px;
+            margin-right: 25px;
+            height: 103px;
+            @media (max-width: 767px){
+                flex: 0 0 90px;
+                margin-right: 15px;
+                height: 80px;
+            }
+        }
+        .searchItemDesc{
+            flex: 1;
+            @media (max-width: 767px){
+                flex: 0 0 100%;
+            }
+            p,
+            span{
+                color: #212121;
+            }
+            p{
+                line-height: 26px;
+                @media (max-width: 767px){
+                    line-height: 18px;
+                }
+            }
+ 
+        }
+        .searchPrice{
+            @media (max-width: 767px){
+                flex: 0 0 100%;
+            }
+        }
+
+    }
+    .searchCat{
+        border-top: 1px solid #D3D3D3;
+        .searchCatBadge{
+            margin: 0 -7px;
+            @media (max-width: 767px){
+                margin: 0 -4px;
+            }
+            span{
+                background-color: #F1F8FA;
+                margin: 0 7px;
+                @media (max-width: 767px){
+                    margin: 0 4px 7px;
+                }
+
+            }
+        }
+
+    }
+ }
+ .logo{
+    @media (max-width: 767px){
+        margin-left: auto;
+        margin-right: auto;
+    }
+ }
+
+ .searchActive{
+    overflow-y: hidden;
+    .searchPanelDropdown{
+        display: block;
+        opacity: 1;
+        z-index: 1;
+        pointer-events: all;
+        position: relative;
+        @media (max-width: 767px){
+           pointer-events: all;
+           padding: 0px 0px 20px;
+        }
+    }
+    .headerMiddleInner{
+        box-shadow: 0px 60px 44px -16px rgba(0, 0, 0, 0.1);
+    }
+    
+ }
+ .mobileIconSearch{
+    input{
+        @media (max-width: 767px){
+            opacity: 0;
+        }
+    }
+    
+ }
+
+ .mobileMenu{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 34px;
+    padding-top: 14px;
+    background-color: #fff;
+    z-index: 9;
+ }

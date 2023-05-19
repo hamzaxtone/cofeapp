@@ -1,0 +1,9 @@
+import AdminLayout from "./AdminLayout";
+import Default from "./default";
+export const Layouts = {
+  Default: Default,
+  Admin: AdminLayout
+};
+export type LayoutKeys = keyof typeof Layouts; 
+
+//export default Layouts; 

@@ -1,0 +1,78 @@
+.prdCard{
+    background: #fff;
+    margin: 0  10px;
+    .productThumb{
+        background-color: #F7F7F7;
+        border-radius: 12px;
+        height: 346px;
+        margin: 0 0 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    img{
+        margin: 0 auto;
+        display: inline-block;
+        height: 2234x;
+        max-height: 234px;
+        max-width: 100%;
+        -o-object-fit: contain;
+        object-fit: contain;
+        -o-object-position: center;
+        object-position: center;
+        width: auto;
+      }
+      .prdDetails{
+        padding: 16px 2px;
+      
+      }
+      .heartIcon {
+        position: absolute;
+        top: 14px;
+        right: 20px;
+      }
+      .prdTitle{
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 26px;
+        margin-bottom: 12px;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        height: 50px;
+        overflow: hidden;
+      }
+      .prdCategory{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #7A7A7A;
+        margin-bottom: 5px;
+      }
+      .priceTag{
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 26px;
+        color: #212121;
+
+      }
+   &.hasDiscount{
+        .priceTag{
+            .oldPrice{
+                color: #4D4D4D;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 26px;
+                margin-right: 4px;
+            }
+            .newPrice{
+                font-size: 18px;
+                line-height: 28px;
+                color: #08BFB0;
+            }
+        }
+   }
+  }
+
