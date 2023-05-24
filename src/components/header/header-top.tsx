@@ -8,6 +8,7 @@ import usflag from '../../assets/usflag.png'
 import saFlag from '../../assets/images/saflag.jpg';
 import styles from '../../styles/components/header/HeaderTop.module.scss';
 import { useRouter } from "next/router";
+import GetLang from '@/hooks/getLang';
 
 export default function HeaderTop() {
   const router = useRouter();
@@ -23,8 +24,10 @@ export default function HeaderTop() {
     el.setAttribute("lang", lang);
   }, [router.locale]);
 
+  const lang = GetLang();
+
   return (
-    <div className="header-top px-4">
+    <div className={`px-4  ${styles.headerTop}`}>
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
         <Menu as="div" className="relative inline-block text-left ">
           <Menu.Button className="flex items-center w-full justify-center gap-x-1.5 font-semibold text-xs">
@@ -94,7 +97,7 @@ export default function HeaderTop() {
                   <Image
                     src={usflag}
                     alt="us-flag"
-                    className='mr-2'
+                    className={`flex items-center ${lang == "en" ? "mr-2" : "ml-2"} `}
                   />
                   English
                 </Link>
@@ -104,7 +107,7 @@ export default function HeaderTop() {
                   <Image
                     src={saFlag}
                     alt="saFlag"
-                    className='mr-2'
+                    className={`flex items-center ${lang == "en" ? "mr-2" : "ml-2"} `}
                   />
                   Arabic
                 </Link>

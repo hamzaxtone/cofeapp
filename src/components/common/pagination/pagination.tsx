@@ -1,14 +1,16 @@
 import React from 'react'
 import Image from 'next/image'
 import styles from './pagination.module.scss';
+import GetLang from '@/hooks/getLang';
 
 export default function Pagination() {
+    const lang = GetLang();
     return(
         <div className={`${styles.paginationWrapper} w-full`}>
-            <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
+            <div className="flex items-center justify-between md:border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
                 <div className="flex flex-1 justify-between sm:hidden">
                     <a href="" className="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Previous</a>
-                    <a href="" className="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Next</a>
+                    <a href="" className={` relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 ${lang == "en" ? " ml-3" : " mr-3"}`}>Next</a>
                 </div>
                 <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
                     <div className={styles.prevbtn}>
@@ -32,7 +34,7 @@ export default function Pagination() {
                         </nav>
                     </div>
                     <div className={styles.nextbtn}>
-                         <a href="" className="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 border-0">
+                         <a href=""className={` relative  inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 border-0 ${lang == "en" ? " ml-3" : " mr-3"}`}>
                           <span className='px-2.5'> Next</span> 
                           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
                             <path d="M1.16669 7.00002H12.8334M12.8334 7.00002L7.00002 1.16669M12.8334 7.00002L7.00002 12.8334" stroke="#4D4D4D" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round"/>

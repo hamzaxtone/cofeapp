@@ -5,8 +5,8 @@ import styles from '../../styles/components/CategoryIconGrid.module.scss';
 export default function CategoryIconGrid({categoryData}:any) {
   
   return (
-    <div className="categoryIconGrid-item text-center">
-      <div className="cat_circle" style={{backgroundColor:categoryData.catColor}}>
+    <div className={`${styles.categoryIconGridItem} text-center categoryIconGridItem`}>
+      <div className={`${styles.cat_circle} cat_circle`} style={{backgroundColor:categoryData.catColor}}>
         <span>
           <Image
             src={categoryData.imageUrl}
@@ -14,7 +14,7 @@ export default function CategoryIconGrid({categoryData}:any) {
           />
         </span>
       </div>
-		  <span className='cat_title'>{categoryData.title}</span>
+		  <span className={`${styles.cat_title} cat_title`}>{categoryData.title}</span>
 	</div>
   )
 }

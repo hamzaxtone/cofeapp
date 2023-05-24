@@ -19,7 +19,7 @@ const Home: MyPage = () => {
       <Head>
         <title>{`Cofeapp | ${metaTitle}` }</title>
       </Head>
-      <main
+      <div
         className={`-flex -min-h-screen -flex-col -items-center -justify-between`}
       >
         <BannerSlider />
@@ -31,7 +31,7 @@ const Home: MyPage = () => {
         <DealsOnCofe />
         <TopProducts sectionTitle={t("home.secondProductSecHeading")} />
         <ShopByBrands sectionTitle={t("home.brandsSecHeading")} />
-      </main>
+      </div>
     </>
   );
 };

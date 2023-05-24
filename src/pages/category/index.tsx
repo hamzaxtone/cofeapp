@@ -7,8 +7,9 @@
 	import React, { useState, useEffect }  from 'react';
 	import { useRouter } from "next/router";
 	import Image from 'next/image';
+	import GetLang from '@/hooks/getLang';
 
-	import styles from '../../styles/Category/Category.module.scss';
+	import styles from '../../styles/category/Category.module.scss';
 
 	// images
 	import productImg1 from '../../assets/images/coffeGrounds.png';
@@ -205,16 +206,16 @@ const [isBodyClassAdded, setIsBodyClassAdded] = useState(false);
   const handleCloseClick = () => {
     setIsBodyClassAdded(false);
   };
+  const lang = GetLang();
 
 		return (
 		<> 
 			<Head>
 				<title>Cofeapp | Category</title>
 			</Head>
-			<main className='px-4'>
-				<>
+			<div className='px-4'>
 				<div className="max-w-screen-xl category-page-sec mx-auto flex flex-wrap">
-					<div className='w-100 mb-5'>
+					<div className='w-full mb-5 lg:mt-0 mt-3.5'>
 						<nav aria-label="breadcrumb">
 							<ol className="flex flex-wrap items-center breadCrumb ">
 								<li className="breadcrumbItem">
@@ -228,12 +229,12 @@ const [isBodyClassAdded, setIsBodyClassAdded] = useState(false);
 								</li>
 							</ol>
 						</nav>
-						<div className={`cursor-pointer text-center rounded-lg md:hidden pb-1.5 pt-1.5  my-5 px-5 ${styles.filterOnMobile}`} onClick={handleButtonClick}>
+						<div className={`cursor-pointer text-center rounded-lg lg:hidden pb-1.5 pt-1.5  my-5 px-5 ${styles.filterOnMobile}`} onClick={handleButtonClick}>
 							<Link href="#" className='text-sm'>Filter (3)</Link>
 						</div>
 					</div>
-					<div className={`w-full md:w-2/6 lg:w-1/4 ${styles.categoryListingLeft}`}>
-						<div className={`flex justify-between items-center md:hidden ${styles.sidebarTopListing}`}>
+					<div className={`w-full  lg:w-1/4 ${styles.categoryListingLeft}`}>
+						<div className={`flex justify-between items-center lg:hidden ${styles.sidebarTopListing}`}>
 							<Link href="/" className={`flex items-center  md:mr-9 ${styles.logo}`}>
 								<Image
 								src={Logo}
@@ -242,7 +243,7 @@ const [isBodyClassAdded, setIsBodyClassAdded] = useState(false);
 							</Link>
 							<Link href="#" className={`${styles.closeSidebar}`} onClick={handleCloseClick}>X</Link>
 						</div>
-						<div className={`md:hidden   ${styles.mobileFilterWrp}`}>
+						<div className={`lg:hidden   ${styles.mobileFilterWrp}`}>
 							<div className={`${styles.sortingMobile}`}>
 								<h3 className={`text-2xl font-semibold mb-10  ${styles.filterTitle}`}>Sorting</h3>
 								<RadioItem />
@@ -250,13 +251,19 @@ const [isBodyClassAdded, setIsBodyClassAdded] = useState(false);
 							<div className={`flex items-center justify-between mb-5 pt-2`}>
 								<h3 className={`text-2xl font-semibold   ${styles.filterTitle}`}>Filters</h3>
 								<button className={`font-medium ${styles.clearBtn} `}>
-								   Clear All
+									Clear All
 								</button>
 							</div>
 							<div className="flex flex-wrap items-center">
 								<PillItem />
 								<PillItem />
 								<PillItem />
+							</div>
+							<div className={`fixed bottom-0 w-full py-2.5  px-5 bg-white z-20 ${styles.footerSidebarButton}`}>
+								<button type='button' className={`w-full text-base text-white pt-2 pb-2.5 rounded-lg ${styles.btn} ${styles.btnPrimary}`}>
+									Show All Items
+								</button>
+
 							</div>
 								
 						</div>
@@ -312,9 +319,9 @@ const [isBodyClassAdded, setIsBodyClassAdded] = useState(false);
 								defaultValue={[30, 70]} 
 								min="0" max="100" 
 								onInput={handleChange} /> */}
-								<div className={`flex justify-between gap-x-6 mb-6 ${styles.rangeValueBx}`}>
-									<span className={`text-base rounded-xl ${styles.rangeValueInner}`}><span>SAR</span>{minValue}</span>
-									<span className={`text-base rounded-xl ${styles.rangeValueInner}`}><span>SAR</span>{maxValue}</span>
+								<div className={`flex  justify-between gap-x-6 mb-6  ${styles.rangeValueBx}`}>
+									<span className={`text-base rounded-xl flex items-center  ${styles.rangeValueInner}`}><span>SAR</span> <input className="w-full"  value={minValue} /></span>
+									<span className={`text-base rounded-xl flex items-center   ${styles.rangeValueInner}`}><span>SAR</span> <input  className="w-full" value={maxValue} /></span>
 								</div>
 								<MultiRangeSlider
 									min={0}
@@ -326,16 +333,16 @@ const [isBodyClassAdded, setIsBodyClassAdded] = useState(false);
 								
 						</div>
 					</div>
-					<div className={`w-full md:w-4/6 lg:w-9/12 ${styles.categorylistingRight}`}>
-						<div className={`hidden md:grid grid-cols-2 mb-7 mt-2 ${styles.categoryFilterWrp}`}>
+					<div className={`w-full  lg:w-9/12 ${styles.categorylistingRight}`}>
+						<div className={`hidden lg:grid grid-cols-2 mb-7 mt-2 ${styles.categoryFilterWrp}`}>
 							<div className={`${styles.categoryFilterLeft}`}>
 								<h3 className='text-3xl font-semibold'>{slug} <span className='text-base ml-4 font-medium'>( 7 items )</span></h3>
 							</div>
 							<div className={`flex items-center justify-end ${styles.categoryFilterRight}`}>
 															<span className='text-sm'>Sort by</span>
 															
-								<Menu as="div" className="relative inline-block text-left ml-2 custom-dropdown2 ">
-									<Menu.Button className="flex items-center z-20 relative w-full justify-between gap-x-1.5 font-semibold text-base">
+								<Menu as="div" className={` relative inline-block text-left ${lang == "en" ? "ml-2" : "mr-2"}  custom-dropdown2 `}>
+									<Menu.Button className="flex items-start z-20 relative w-full justify-between gap-x-1.5 font-semibold text-base">
 										Recomended
 										<ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
 									</Menu.Button>
@@ -351,11 +358,11 @@ const [isBodyClassAdded, setIsBodyClassAdded] = useState(false);
 									<Menu.Items className="absolute  right-0 z-10 rounded-md bg-white custom-menu-item2">
 										<div className="menu-item-inner2">
 											<Menu.Item>
-												<span className='block'>Recomended</span>
+												<span className={` block ${lang == "en" ? "text-left" : "text-right"}`}>Recomended</span>
 													
 											</Menu.Item> 
 											<Menu.Item>
-												<span className='block'>Recomended</span>
+												<span className={` block ${lang == "en" ? "text-left" : "text-right"}`}>Recomended</span>
 											</Menu.Item> 
 										</div>
 									</Menu.Items>
@@ -364,19 +371,19 @@ const [isBodyClassAdded, setIsBodyClassAdded] = useState(false);
 
 							</div>
 						</div>
-						<div className="hidden md:grid grid-col-1">
-						  <div className="flex flex-wrap items-center">
+						<div className="hidden lg:grid grid-col-1">
+							<div className="flex flex-wrap items-center">
 								<PillItem />
 								<PillItem />
 								<PillItem />
 								<button className={`${styles.clearBtn} mb-4`}>
-								   Clear All
+									Clear All
 								</button>
 							</div>
 							
 						</div>
 						<div className="TopProducts gutters-grid-view">
-							<div className="grid lg:grid-cols-4 md:grid-cols-3  grid-cols-2 gap-1">
+							<div className="grid lg:grid-cols-4 md:grid-cols-3  grid-cols-2">
 								{data.products.map((product, index) => {
 									return (
 										<div key={product.title+index}>
@@ -389,11 +396,10 @@ const [isBodyClassAdded, setIsBodyClassAdded] = useState(false);
 						</div>
 					</div>
 				</div>
-				<div className={`${styles.paginationSec} mt-28 mb-16`}>
+				<div className={`${styles.paginationSec} md:mt-28 md:mb-16 my-10`}>
 					<Pagination />
 				</div>
-				</>
-			</main>
+			</div>
 			
 		</>
 		);

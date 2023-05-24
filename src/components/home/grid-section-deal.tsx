@@ -12,130 +12,130 @@ import styles from '../../styles/home/GridSectionDeal.module.scss';
 
 export default function GridSectionDeal() {
   return (
-    <div className='section-grid-deal py-10 px-4 section'>
+    <div className={`py-10 px-4 section ${styles.sectionGridDeal}`}>
       <div className='max-w-screen-xl mx-auto'>
         <div className='grid lg:grid-cols-3 md:grid-cols-2  gap-4'>
-          {/* <div className='grid-deal-bx p-4 bg-white rounded-xl'>
+          <div className={`p-4 bg-white rounded-xl ${styles.gridDealBx}`}>
             <h4 className='lg:text-2xl md:text-lg font-semibold mb-0.5'>More Reason to Shop</h4>
             <div className='flex flex-wrap'>
-              <div className='grid-deal-content mt-4 relative'>
+              <div className={`mt-4 relative ${styles.gridDealContent}`}>
                 <Image src={gridDealImg} className='rounded-t-md' alt={''} />
-                <div className='desc rounded-b-md p-2'>
+                <div className={`rounded-b-md p-2 ${styles.desc}`}>
                   <p className='mb-1 font-semibold'>Best Duo Deals</p>
                   <span>Get the best at the best prices</span>
                 </div>
               </div>
-              <div className='grid-deal-content mt-4 relative'>
+              <div className={`mt-4 relative ${styles.gridDealContent}`}>
                 <Image src={gridDealImg} className='rounded-t-md' alt={''} />
-                <div className='desc rounded-b-md p-2'>
+                <div className={`rounded-b-md p-2 ${styles.desc}`}>
                   <p className='mb-1 font-semibold'>Best Duo Deals</p>
                   <span>Get the best at the best prices</span>
                 </div>
               </div>
-              <div className='grid-deal-content mt-4 relative'>
+              <div className={`mt-4 relative ${styles.gridDealContent}`}>
                 <Image src={gridDealImg} className='rounded-t-md' alt={''} />
-                <div className='desc rounded-b-md p-2'>
+                <div className={`rounded-b-md p-2 ${styles.desc}`}>
                   <p className='mb-1 font-semibold'>Best Duo Deals</p>
                   <span>Get the best at the best prices</span>
                 </div>
               </div>
-              <div className='grid-deal-content mt-4 relative'>
+              <div className={`mt-4 relative ${styles.gridDealContent}`}>
                 <Image src={gridDealImg} className='rounded-t-md' alt={''} />
-                <div className='desc rounded-b-md p-2'>
+                <div className={`rounded-b-md p-2 ${styles.desc}`}>
                   <p className='mb-1 font-semibold'>Best Duo Deals</p>
                   <span>Get the best at the best prices</span>
                 </div>
               </div>
             </div>
           </div>
-          <div className='grid-deal-bx p-4 bg-white rounded-xl'>
+          <div className={`p-4 bg-white rounded-xl ${styles.gridDealBx}`}>
             <h4 className='lg:text-2xl md:text-lg font-semibold mb-0.5'>Mega Deals</h4>
             <div className='flex flex-wrap'>
-              <div className='grid-deal-content mt-4 relative'>
+              <div className={`mt-4 relative ${styles.gridDealContent}`}>
                 <Image src={gridDealImg} className='rounded-t-md' alt={''} />
                 <div className='new-arrival new-arrival-sm'>
                   <span className='font-semibold'>Upto 40% Off</span>
                 </div>
-                <div className='desc rounded-b-md p-2'>
+                <div className={`rounded-b-md p-2 ${styles.desc}`}>
                   <p className='mb-1 font-semibold'>Best Duo Deals</p>
                   <span>Get the best at the best prices</span>
                 </div>
               </div>
-              <div className='grid-deal-content mt-4 relative'>
+              <div className={`mt-4 relative ${styles.gridDealContent}`}>
                 <Image src={gridDealImg} className='rounded-t-md' alt={''} />
-                <div className='desc rounded-b-md p-2'>
+                <div className={`rounded-b-md p-2 ${styles.desc}`}>
                   <p className='mb-1 font-semibold'>Best Duo Deals</p>
                   <span>Get the best at the best prices</span>
                 </div>
               </div>
-              <div className='grid-deal-content mt-4 relative'>
-                <Image src={gridDealImg} className='rounded-t-md' alt={''} />
-                <div className='new-arrival new-arrival-sm'>
-                  <span className='font-semibold'>Upto 40% Off</span>
-                </div>
-                <div className='desc rounded-b-md p-2'>
-                  <p className='mb-1 font-semibold'>Best Duo Deals</p>
-                  <span>Get the best at the best prices</span>
-                </div>
-              </div>
-              <div className='grid-deal-content mt-4 relative'>
+              <div className={`mt-4 relative ${styles.gridDealContent}`}>
                 <Image src={gridDealImg} className='rounded-t-md' alt={''} />
                 <div className='new-arrival new-arrival-sm'>
                   <span className='font-semibold'>Upto 40% Off</span>
                 </div>
-                <div className='desc rounded-b-md p-2'>
+                <div className={`rounded-b-md p-2 ${styles.desc}`}>
+                  <p className='mb-1 font-semibold'>Best Duo Deals</p>
+                  <span>Get the best at the best prices</span>
+                </div>
+              </div>
+              <div className={`mt-4 relative ${styles.gridDealContent}`}>
+                <Image src={gridDealImg} className='rounded-t-md' alt={''} />
+                <div className='new-arrival new-arrival-sm'>
+                  <span className='font-semibold'>Upto 40% Off</span>
+                </div>
+                <div className={`rounded-b-md p-2 ${styles.desc}`}>
                   <p className='mb-1 font-semibold'>Best Duo Deals</p>
                   <span>Get the best at the best prices</span>
                 </div>
               </div>
             </div>
           </div>
-          <div className='grid-deal-bx p-4 bg-white rounded-xl'>
+          <div className={`p-4 bg-white rounded-xl ${styles.gridDealBx}`}>
             <h4 className='lg:text-2xl md:text-lg font-semibold mb-0.5'>New Arrival</h4>
             <div className='flex flex-wrap'>
-              <div className='grid-deal-content mt-4 relative'>
+              <div className={`mt-4 relative ${styles.gridDealContent}`}>
                 <Image src={gridDealImg} className='rounded-t-md' alt={''} />
                 <div className='new-arrival new-arrival-sm'>
                   <span className='font-semibold'>New Arrival</span>
                 </div>
-                <div className='desc rounded-b-md p-2'>
+                <div className={`rounded-b-md p-2 ${styles.desc}`}>
                   <p className='mb-1 font-semibold'>Best Duo Deals</p>
                   <span>Get the best at the best prices</span>
                 </div>
               </div>
-              <div className='grid-deal-content mt-4 relative'>
+              <div className={`mt-4 relative ${styles.gridDealContent}`}>
                 <Image src={gridDealImg} className='rounded-t-md' alt={''} />
                 <div className='new-arrival new-arrival-sm'>
                   <span className='font-semibold'>New Arrival</span>
                 </div>
-                <div className='desc rounded-b-md p-2'>
+                <div className={`rounded-b-md p-2 ${styles.desc}`}>
                   <p className='mb-1 font-semibold'>Best Duo Deals</p>
                   <span>Get the best at the best prices</span>
                 </div>
               </div>
-              <div className='grid-deal-content mt-4 relative'>
+              <div className={`mt-4 relative ${styles.gridDealContent}`}>
                 <Image src={gridDealImg} className='rounded-t-md' alt={''} />
                 <div className='new-arrival new-arrival-sm'>
                   <span className='font-semibold'>New Arrival</span>
                 </div>
-                <div className='desc rounded-b-md p-2'>
+                <div className={`rounded-b-md p-2 ${styles.desc}`}>
                   <p className='mb-1 font-semibold'>Best Duo Deals</p>
                   <span>Get the best at the best prices</span>
                 </div>
               </div>
-              <div className='grid-deal-content mt-4 relative'>
+              <div className={`mt-4 relative ${styles.gridDealContent}`}>
                 <Image src={gridDealImg} className='rounded-t-md' alt={''} />
                 <div className='new-arrival new-arrival-sm'>
                   <span className='font-semibold'>New Arrival</span>
                 </div>
-                <div className='desc rounded-b-md p-2'>
+                <div className={`rounded-b-md p-2 ${styles.desc}`}>
                   <p className='mb-1 font-semibold'>Best Duo Deals</p>
                   <span>Get the best at the best prices</span>
                 </div>
               </div>
             </div>
-          </div> */}
-          <Link href="">
+          </div>
+          {/* <Link href="">
             <Image src={reasonToShop} className='w-full md:block hidden' alt={''}/>
             <Image src={reasonToShopMbl} className='w-full md:hidden block' alt={''}/>
           </Link>
@@ -146,7 +146,7 @@ export default function GridSectionDeal() {
           <Link href="">
             <Image src={megaDeals} className='w-full md:block hidden' alt={''}/>
             <Image src={megaDealsMbl} className='w-full md:hidden block' alt={''}/>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

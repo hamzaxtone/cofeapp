@@ -1,10 +1,13 @@
 .prdCard{
     background: #fff;
     margin: 0  10px;
+    @media(max-width:767px){
+      margin: 0 4px;
+    }
     .productThumb{
         background-color: #F7F7F7;
         border-radius: 12px;
-        height: 346px;
+        height: 250px;
         margin: 0 0 5px;
         display: flex;
         flex-direction: column;
@@ -15,8 +18,7 @@
     img{
         margin: 0 auto;
         display: inline-block;
-        height: 2234x;
-        max-height: 234px;
+        max-height: 170px;
         max-width: 100%;
         -o-object-fit: contain;
         object-fit: contain;
@@ -26,12 +28,17 @@
       }
       .prdDetails{
         padding: 16px 2px;
-      
+        @media(max-width:767px){
+          padding: 6px 2px;
+        }
       }
       .heartIcon {
         position: absolute;
         top: 14px;
         right: 20px;
+        @media(max-width:767px){
+          right: 6px;
+        }
       }
       .prdTitle{
         font-weight: 600;
@@ -43,6 +50,11 @@
         display: -webkit-box;
         height: 50px;
         overflow: hidden;
+        @media(max-width:767px){
+          font-size: 16px;
+          line-height: 24px;
+          margin-bottom: 8px;
+        }
       }
       .prdCategory{
         font-weight: 400;
@@ -50,6 +62,10 @@
         line-height: 24px;
         color: #7A7A7A;
         margin-bottom: 5px;
+        @media(max-width:767px){
+          font-size: 14px;
+          line-height: 20px;
+        }
       }
       .priceTag{
         font-weight: 700;
@@ -66,13 +82,42 @@
                 font-size: 16px;
                 line-height: 26px;
                 margin-right: 4px;
+                @media(max-width:767px){
+                  font-size: 14px;
+                  line-height: 20px;
+                }
             }
             .newPrice{
                 font-size: 18px;
                 line-height: 28px;
                 color: #08BFB0;
+                @media(max-width:767px){
+                  font-size: 16px;
+                  line-height: 24px;
+                }
             }
         }
    }
   }
 
+html[lang=ar]{
+  .prdCard{
+    &.hasDiscount{
+      .priceTag{
+        .oldPrice{
+          margin-right: 0;
+          margin-left: 4px;
+        }
+      }
+
+    }
+    .heartIcon{
+      left: 20px;
+      right: unset;
+      @media(max-width:767px){
+        left: 7px;
+        right: unset;
+      }
+    }
+  }
+}

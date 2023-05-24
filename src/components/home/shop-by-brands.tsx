@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import styles from '../../styles/Home/ShopByBrands.module.scss';
+import styles from '../../styles/home/ShopByBrands.module.scss';
 
 // images static
 import brand1 from '../../assets/images/svg/brand1.svg';
@@ -107,11 +107,11 @@ export default function ShopByBrands(props : any) {
     ]
   };
   return (
-    <div className="ShopByCategory section px-4">
+    <div className="ShopByCategory section px-4 ">
 		<div className="max-w-screen-xl mx-auto">
       <div className="flex justify-between w-full items-center head-sec">
         <h2 className='section_title'>{props.sectionTitle}</h2>
-        <Link href="">
+        <Link href="" className="view-all">
           View All
         </Link>
       </div>

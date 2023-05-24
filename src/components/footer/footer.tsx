@@ -3,6 +3,7 @@ import Image from 'next/image'
 import logo from '../../assets/Logo.svg'
 import Link from 'next/link'
 import styles from '../../styles/components/footer/Footer.module.scss';
+import Icon from '@/components/common/icons/icomoon';
 
 // links
 import Twitter from '../../assets/images/svg/twitter.svg'
@@ -20,45 +21,45 @@ import footerMbl from '../../assets/images/footermblimg.png';
 export default function Footer() {
 	
 {/* Conditional Rendering */}
-	const [mobile, setMobile] = useState(() => {
-		if (typeof window === 'undefined') return false
-		return window.innerWidth < 576
-	});
-  	useEffect(() => {
-    	const updateMobile = () => {
-      		setMobile(window.innerWidth < 767 ? true : false);
-    	}
-		updateMobile()
-			window.addEventListener('resize', updateMobile)
-		return () => {
-			window.removeEventListener('resize', updateMobile)
-		}
-  	}, [])
+	// const [mobile, setMobile] = useState(() => {
+	// 	if (typeof window === 'undefined') return false
+	// 	return window.innerWidth < 576
+	// });
+  	// useEffect(() => {
+    // 	const updateMobile = () => {
+    //   		setMobile(window.innerWidth < 767 ? true : false);
+    // 	}
+	// 	updateMobile()
+	// 		window.addEventListener('resize', updateMobile)
+	// 	return () => {
+	// 		window.removeEventListener('resize', updateMobile)
+	// 	}
+  	// }, [])
 {/* Conditional Rendering */}
 
 	return (
-		<div className={`${styles.footerWrapper}`}>
+		<div className={`${styles.footerWrapper} lg:pt-[65px] lg:pb-[15px] py-[32px] px-[16px]`}>
 
-			{ typeof mobile !== 'undefined' ? (
+			{/* { typeof mobile !== 'undefined' ? (
 				mobile ? (
 					<div className='mobile'></div>
 				) : (
 					<div className='desktop'></div>
 				)
 			) : null
-			}
+			} */}
 
-			<div className="max-w-screen-xl mx-auto ">
-				<div className={`${styles.footerTopSec}  flex lg:flex-row flex-col  justify-center items-center`}>
+			<div className="max-w-screen-xl mx-auto">
+				<div className={`${styles.footerTopSec}  flex lg:flex-row flex-col  justify-center items-center lg:mb-[65px] mb-[30px] lg:py-[60px] lg:px-[70px] pt-[40px] rounded-[20px]`}>
 					<Image src={footerImg} alt={''} className='md:flex-2 lg:order-1 order-2 lg:block hidden'/>
 					<Image src={footerMbl} alt={''} className='md:flex-2 lg:order-1 order-2 lg:hidden block'/>
 					<div className="lg:flex flex-col lg:justify-start justify-center lg:items-left md:order-1 lg:mb-0 mb-10">
-						<div className={`flex ${styles.revolutionSec} flex-wrap lg:justify-start justify-center`} >
-							<h6 className="flex">Join The </h6>
+						<div className={`flex ${styles.revolutionSec} flex-wrap lg:justify-start justify-center lg:mb-[0] mb-[20px]`} >
+							<h6 className="flex lg:text-[47px] md:text-[35px] text-[25px] font-bold md:px-[10px] px-[5px]">Join The </h6>
 							<Image src={logo}
 								alt="logo-coffe"
 								className={`${styles.footerlogoImg} flex `} />
-							<h6 className="flex">Revolution</h6>
+							<h6 className="flex lg:text-[47px] md:text-[35px] text-[25px] font-bold md:px-[10px] px-[5px]">Revolution</h6>
 						</div>
 						<div className="flex items-center flex-wrap lg:justify-start justify-center">
 							<Link href="" className={`${styles.appStore}`}>
@@ -67,7 +68,7 @@ export default function Footer() {
 							<Link href="" className={`${styles.appStore}`}>
 								<Image src={playstore} alt={''} />
 							</Link>
-							<Link href="" className={`${styles.appStore} ${styles.bgWhite} ${styles.qrCode}`}>
+							<Link href="" className={`${styles.appStore} ${styles.qrCode} bg-white`}>
 								<Image src={qrcode} alt={''} />
 							</Link>
 							<div className={`${styles.becomePartner} lg:block hidden items-center` }>
@@ -108,7 +109,7 @@ export default function Footer() {
 								Contact
 							</Link>
 						</div>
-						<div className={`${styles.rightSec}  flex items-center justify-between`}>
+						<div className={`${styles.rightSec}  flex items-center justify-between lg:py-[0] py-[40px]`}>
 							<div className="lg:hidden">
                                <Link href="" className=''>
 								<Image src={logo}
@@ -121,67 +122,36 @@ export default function Footer() {
 								Follow Us:
 							</span>
 							<Link href="">
-								<Image
-									src={Twitter}
-									width={17}
-									height={14}
-									alt='twitter'
-								>
-								</Image>
+								<Icon icon="icon-twitter" />
 							</Link>
 							<Link href="">
-								<Image
-									src={Facebook}
-									width={17}
-									height={14}
-									alt='Facebook'
-								>
-								</Image>
+								<Icon icon="icon-facebook" />
 							</Link>
 							<Link href="">
-								<Image
-									src={Instagram}
-									width={17}
-									height={14}
-									alt='Instagram'
-								>
-								</Image>
+								<Icon icon="icon-instagram" />
+								
 							</Link>
 							<Link href="">
-								<Image
-									src={Linkedin}
-									width={17}
-									height={14}
-									alt='Linkedin'
-								>
-								</Image>
-
+								<Icon icon="icon-linkedin" />
 							</Link>
 							<Link href="">
-								<Image
-									src={Youtube}
-									width={17}
-									height={14}
-									alt='Youtube'
-								>
-								</Image>
-
+								<Icon icon="icon-youtube" />
 							</Link>
 							</div>
 						</div>
 					</div>
-					<div className={`${styles.copyrightsSec}`}>
+					<div className={`${styles.copyrightsSec} lg:pt-[20px]`}>
 						<div className="flex md:justify-between items-center justify-center md:flex-row flex-col ">
 							<p className='md:order-1 order-2'>COFE App © 2023 All rights reserved.</p>
-							<div className="md:order-2 order-1">
+							<div className="md:order-2 order-1 lg:mb-[0] mb-[15px]">
 								<Link href="">
 									Terms & Conditions
 								</Link>
-								<span className='px-3'>|</span>
+								<span className='md:px-3 px-2'>|</span>
 								<Link href="">
 									Privacy Policy
 								</Link>
-								<span className='px-3'>|</span>
+								<span className='md:px-3 px-2'>|</span>
 								<Link href="">
 									Cookies Policy
 								</Link>

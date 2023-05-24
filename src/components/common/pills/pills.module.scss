@@ -27,3 +27,21 @@
         }
     }
 }
+
+html[lang=ar]{
+    .pillsItemWrapper{
+        margin-right: 0;
+        margin-left: 16px;
+        .btnCancelledPill{
+            right: unset;
+            left: -3px;
+            @media (max-width: 767px){
+                position: relative;
+                top: 3px;
+               left: unset;
+               right: 0;
+            }
+        }
+        
+    }
+}

@@ -16,3 +16,11 @@
         }
    }
 }
+
+html[lang=ar]{
+    .nextbtn,.prevbtn{
+        svg{
+            transform: rotate(180deg);
+        }
+    }
+}

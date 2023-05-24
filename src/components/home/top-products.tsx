@@ -76,18 +76,11 @@ export default function TopProducts(props: any) {
           
         }
       },
+    
       {
-        breakpoint: 600,
+        breakpoint: 767,
         settings: {
-          slidesToShow: 1.5,
-          slidesToScroll: 1,
-          arrows:false,
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1.5,
+          slidesToShow: 2.1,
           slidesToScroll: 1,
           arrows:false,
         }
@@ -96,11 +89,11 @@ export default function TopProducts(props: any) {
   };
   return (
     <>
-      <div className="section TopProducts px-4">
+      <div className="section TopProducts md:px-4">
         <div className="max-w-screen-xl mx-auto">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center md:px-0 px-4">
             <h2 className='section_title'>{props.sectionTitle}</h2>
-            <Link href="">
+            <Link href="" className='view-all'>
               View All
             </Link>
           </div>

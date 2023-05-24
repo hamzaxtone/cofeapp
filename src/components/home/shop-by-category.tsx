@@ -81,10 +81,10 @@ export default function ShopByCategory(props : any) {
    
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1199,
         settings: {
-          slidesToShow: 6.5,
-          slidesToScroll: 3,
+          slidesToShow: 7.5,
+          slidesToScroll: 1,
           infinite: false,
           dots: false,
           arrows: false,
@@ -111,7 +111,7 @@ export default function ShopByCategory(props : any) {
     ]
   };
   return (
-    <div className="ShopByCategory section px-4">
+    <div className={`${styles.ShopByCategory} section px-4 mbl-shop-by-cat`}>
 		<div className="max-w-screen-xl mx-auto">
       <div className="flex justify-between w-full items-center head-sec">
         <h2 className='section_title my-0'>{props.sectionTitle}</h2>

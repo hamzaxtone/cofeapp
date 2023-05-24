@@ -34,3 +34,12 @@
 .radioCustomWrp input:checked + .radioCustom:before{
  opacity: 1;
 }
+
+html[lang=ar]{
+    .radioCustomWrp{
+        .radioText{
+            margin-left: 0;
+            margin-right: 35px;
+        }
+    }
+}

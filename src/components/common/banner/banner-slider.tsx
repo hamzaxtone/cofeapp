@@ -6,7 +6,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import styles from '../../styles/components/slider/BannerSlider.module.scss';
+import styles from '../../../styles/components/slider/BannerSlider.module.scss';
 
 // images static
 import rightBanner from '../../../assets/images/Rightbanner.png';
@@ -66,14 +66,14 @@ var settings = {
 };
 const Carousel = () => {
   return (
-    <div className='banner-slider-wrp mb-11 px-4'>
+    <div className={` mb-11 px-4 lg:mt-0 mt-8 banner-slider-wrp  ${styles.bannerSliderWrp}`}>
       {/* <div className='max-w-screen-xl mx-auto '>
-        <div className='banner-slide'>
+        <div className={` ${styles.bannerSlide}`}>
           <Slider {...settings}>
             {data.banners.map((banner, index) => {
               return (
-                <div className='slider-item flex flex-wrap' key={banner.title}>
-                  <div className='slider-left'>
+                <div className={`flex flex-wrap ${styles.sliderItem}`} key={banner.title}>
+                  <div className={`${styles.sliderLeft}`}>
                     <h3 className='text-white font-bold'>{banner.preHeading}</h3>
                     <h2 className='text-white font-extrabold'>{banner.title}</h2>
                     <span className='text-white font-semibold lg:mb-3.5 md:mb-1.5  block '>{banner.postHeading}</span>
@@ -86,7 +86,7 @@ const Carousel = () => {
                       </Link>
                     </div>
                   </div>
-                  <div className='slider-right'>
+                  <div className={`${styles.sliderRight}`}>
                     <Image src={banner.imageUrl} alt={''} />
                   </div>
                 </div>
@@ -97,14 +97,14 @@ const Carousel = () => {
         </div>
       </div> */}
       <div className='max-w-screen-xl mx-auto'>
-        <div className="banner-slider-inner">        
+        <div className={` ${styles.bannerSliderInner}`}>        
           <Slider {...settings}>
-            <div className="banner-sslider">
+            <div className={` ${styles.bannerSlider}`}>
               <Link className='' href="">
                 <Image src={homeBanner} alt="" />
               </Link>
-              </div>
-              <div className="banner-slider">
+            </div>
+              <div className={`${styles.bannerSlider}`}>
               <Link className='' href="">
                 <Image src={homeBanner} alt="" />
               </Link>

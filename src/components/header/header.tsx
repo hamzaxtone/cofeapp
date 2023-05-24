@@ -7,6 +7,7 @@ import HeaderBottom from './header-bottom';
 import MobileMenu from './mobile-menu';
 import MenuCloser from './menu-closer';
 import useIsDevice from '@/hooks/is-device';
+import GetLang from '@/hooks/getLang';
 
 // images
 import Logo from '../../assets/Logo.svg';
@@ -23,12 +24,12 @@ export default function Header() {
   };
   const handleInputFocus = (e: any) => {
     setSearchActive("true");
-    document.body.classList.add('searchfocusopen');
+    document.body.classList.add(styles.searchFocusOpen);
 
   };
   const handleInputBlur = (e: any) => {
     setSearchActive("false");
-    document.body.classList.remove('searchfocusopen', styles.searchActive);
+    document.body.classList.remove(styles.searchFocusOpen, styles.searchActive);
   };
 
   
@@ -67,16 +68,18 @@ export default function Header() {
 
 
 
-
+const lang = GetLang();
 
   return (
-    <div className="header bg-white">
+    <div className={`bg-white ${styles.header}`}>
       <HeaderTop />
-      <header className='header-middle mt-6 mb-7 relative'>
-        <div className={`header-middle-inner  px-4  ${styles.headerMiddleInner}`}>
+      
+      <header className={` mt-2.5 mb-2.5 lg:mt-6 lg:mb-7 relative  ${styles.headerMiddle}`}>
+        <div className={`px-4  ${styles.headerMiddleInner}`}>
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto ">
-            <div className='header-left flex flex-wrap items-center'>
+            <div className={`flex flex-wrap items-center  ${styles.headerLeft }`}>
               <div className="lg:hidden flex items-center" >
+                
                 
                 {isIPadMobileScreen &&
                   <>
@@ -110,7 +113,7 @@ export default function Header() {
               </div>
 
 
-              <Link href="/" className={`flex items-center  md:mr-9 ${styles.logo}`}>
+              <Link href="/" className={`flex items-center ${lang == "en" ? "md:mr-9" : "md:ml-9"}  ${styles.logo}`}>
                 <Image
                   src={Logo}
                   alt="CofeApp"
@@ -120,7 +123,7 @@ export default function Header() {
                 // placeholder="blur" // Optional blur-up while loading
                 />
               </Link>
-              <div className='search-wrp md:block hidden'>
+              <div className={`lg:block hidden ${styles.searchWrp}`}>
                 <div className='relative'>
                   <input
                     type="search"
@@ -128,7 +131,7 @@ export default function Header() {
                     id="first-name"
                     autoComplete="given-name"
                     placeholder='Search Products, Brands and Categories...'
-                    className="search-bar rounded-full text-sm"
+                    className={`rounded-full text-sm ${styles.searchBar}`}
                     value={inputValue}
                     onFocus={handleInputFocus}
                     onBlur={handleInputBlur}
@@ -140,13 +143,13 @@ export default function Header() {
                   </svg>
                 </div>
                 <div className={` ${styles.searchPanelDropdown}`}>
-                  <div className={`flex justify-between  mb-3.5 mt-5 ${styles.searchPannelTop}`}>
+                  <div className={`flex justify-between  mb-3.5 mt-6 ${styles.searchPannelTop}`}>
                     <h4 className={`text-lg font-semibold ${styles.searchTitle}`}>Products</h4>
                     <span className='text-sm font-semibold'>See all Results</span>
                   </div>
                   <div className={`${styles.searchScroll}`}>
-                    <div className={`md:mb-5 mb-1.5  rounded-xl  ${styles.searchItem}`}>
-                      <Link href="#" className={`flex py-1 md:px-4`}>
+                    <div className={`md:mb-5 mb-2  rounded-xl  ${styles.searchItem}`}>
+                      <Link href="#" className={`flex md:py-1 md:px-4`}>
                         <div className={`rounded-xl flex items-center ${styles.searchItemImage}`}>
                           <Image
                             src={productImageSearch}
@@ -155,17 +158,17 @@ export default function Header() {
                         </div>
                         <div className='flex justify-between flex-1 flex-wrap w-100'>
                           <div className={`md:mt-3.5 ${styles.searchItemDesc}`}>
-                            <p className='mb-1 md:text-lg md:text-base text-sm font-semibold'>Premium Arabic Coffee Grounds Saudi Blend</p>
+                            <p className='md:mb-1 md:text-lg md:text-base text-sm font-semibold'>Premium Arabic Coffee Grounds Saudi Blend</p>
                             <span className='md:text-base text-sm'>Saudicoffee</span>
                           </div>
                           <div className={`flex items-end ${styles.searchPrice}`}>
-                            <span className='md:text-lg md:text-base text-sm font-semibold'>100.00 SAR</span>
+                            <span className='md:text-lg md:text-base text-sm font-bold md:font-semibold'>100.00 SAR</span>
                           </div>
                         </div>
                       </Link>
                     </div>
-                    <div className={`md:mb-5 mb-1.5 rounded-xl ${styles.searchItem}`}>
-                      <Link href="#" className={`flex py-1 md:px-4`}>
+                    <div className={`md:mb-5 mb-2 rounded-xl ${styles.searchItem}`}>
+                      <Link href="#" className={`flex md:py-1 md:px-4`}>
                         <div className={`rounded-xl flex items-center ${styles.searchItemImage}`}>
                           <Image
                             src={productImageSearch}
@@ -174,19 +177,19 @@ export default function Header() {
                         </div>
                         <div className='flex justify-between flex-1 flex-wrap w-100'>
                           <div className={`md:mt-3.5 ${styles.searchItemDesc}`}>
-                            <p className='mb-1 md:text-lg md:text-base text-sm font-semibold'>Premium Arabic Coffee Grounds Saudi Blend</p>
+                            <p className='md:mb-1 md:text-lg md:text-base text-sm font-semibold'>Premium Arabic Coffee Grounds Saudi Blend</p>
                             <span className='md:text-base text-sm'>Saudicoffee</span>
                           </div>
                           <div className={`flex items-end ${styles.searchPrice}`}>
-                            <span className='md:text-lg md:text-base text-sm font-semibold'>100.00 SAR</span>
+                            <span className='md:text-lg md:text-base text-sm font-bold md:font-semibold'>100.00 SAR</span>
                           </div>
                         </div>
                       </Link>  
                     </div>
                   </div>
-                  <div className={`mt-6 ${styles.searchCat}`}>
-                    <h4 className={`text-lg md:mb-5 mb-3.5 md:pt-5 pt-3.5 font-semibold ${styles.searchTitle}`}>Search by Category</h4>
-                    <div className={`flex flex-wrap  ${styles.searchCatBadge}`}>
+                  <div className={`mt-5 md:mt-6 ${styles.searchCat}`}>
+                    <h4 className={`text-lg md:mb-5 mb-5 md:pt-5 md:pt-3.5 font-semibold ${styles.searchTitle}`}>Search by Category</h4>
+                    <div className={`md:flex flex-wrap  ${styles.searchCatBadge}`}>
                       <Link href="#">
                         <span className={`md:text-base text-sm rounded-full py-2 px-4`}>Coffee Beans</span>
                       </Link>
@@ -206,7 +209,7 @@ export default function Header() {
               </div>
 
             </div>
-            <div className='header-right flex flex-wrap items-center'>
+            <div className={`flex flex-wrap items-center  ${styles.headerRight}`}>
               <Link href="" className='md:block hidden'>
                 <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10 18C9.86188 17.9996 9.7278 17.9535 9.61869 17.869C6.14313 15.175 3.74899 12.8551 2.07372 10.5663C-0.0641191 7.64152 -0.551698 4.9412 0.623491 2.54023C1.46113 0.825247 3.86776 -0.577919 6.68072 0.239036C8.02189 0.625523 9.19205 1.45436 10 2.59012C10.808 1.45436 11.9781 0.625523 13.3193 0.239036C16.126 -0.565446 18.5389 0.825247 19.3765 2.54023C20.5517 4.9412 20.0641 7.64152 17.9263 10.5663C16.251 12.8551 13.8569 15.175 10.3813 17.869C10.2722 17.9535 10.1381 17.9996 10 18ZM5.08046 1.25555C4.41113 1.22956 3.74735 1.38592 3.16036 1.70784C2.57338 2.02976 2.08535 2.50508 1.74867 3.08279C0.779767 5.06593 1.21734 7.27357 3.08639 9.82422C5.07269 12.3802 7.39859 14.6545 10 16.5844C12.601 14.6564 14.9269 12.3842 16.9136 9.83045C18.7889 7.27357 19.2202 5.06593 18.2513 3.08902C17.6262 1.84176 15.7509 0.850192 13.6631 1.4364C12.9936 1.63378 12.373 1.96881 11.8412 2.41991C11.3093 2.87102 10.8781 3.42822 10.5751 4.05565C10.528 4.17003 10.4479 4.26786 10.3449 4.33671C10.242 4.40556 10.1208 4.44232 9.99687 4.44232C9.87293 4.44232 9.75178 4.40556 9.64882 4.33671C9.54587 4.26786 9.46575 4.17003 9.41866 4.05565C9.11797 3.42665 8.68743 2.86815 8.15526 2.41676C7.62309 1.96537 7.0013 1.63129 6.33066 1.4364C5.92433 1.31866 5.50358 1.2578 5.08046 1.25555Z" fill="#4D4D4D" />
@@ -219,15 +222,15 @@ export default function Header() {
                 </svg>
               </Link>
               <Link href="">
-                <span className='cart-header'>
+                <span className={`${styles.cartHeader}`}>
                   <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M16.6831 12.2813H5.1538L5.73268 11.0575L15.351 11.0395C15.6763 11.0395 15.9551 10.7983 16.0132 10.4647L17.3452 2.72621C17.38 2.52325 17.3278 2.31426 17.2 2.15551C17.1368 2.07738 17.0581 2.01445 16.9691 1.97108C16.8802 1.9277 16.7832 1.90493 16.685 1.90433L4.44907 1.86213L4.34453 1.35172C4.2787 1.02618 3.99603 0.789062 3.67465 0.789062H0.68343C0.502173 0.789063 0.32834 0.863797 0.200172 0.996826C0.0720041 1.12985 0 1.31028 0 1.49841C0 1.68654 0.0720041 1.86697 0.200172 2C0.32834 2.13302 0.502173 2.20776 0.68343 2.20776H3.12093L3.57784 4.4624L4.7027 10.1151L3.25452 12.5687C3.17932 12.674 3.13402 12.7991 3.12375 12.9298C3.11349 13.0605 3.13867 13.1916 3.19644 13.3082C3.3126 13.5473 3.54687 13.698 3.8063 13.698H5.02215C4.76294 14.0553 4.62294 14.4906 4.62332 14.9379C4.62332 16.0752 5.51391 16.9996 6.60972 16.9996C7.70553 16.9996 8.59612 16.0752 8.59612 14.9379C8.59612 14.4897 8.45285 14.0537 8.19729 13.698H11.3163C11.0571 14.0553 10.9171 14.4906 10.9175 14.9379C10.9175 16.0752 11.808 16.9996 12.9039 16.9996C13.9997 16.9996 14.8903 16.0752 14.8903 14.9379C14.8903 14.4897 14.747 14.0537 14.4914 13.698H16.685C17.0606 13.698 17.3684 13.3805 17.3684 12.9887C17.3673 12.8007 17.2946 12.6209 17.1662 12.4884C17.0378 12.3558 16.8641 12.2814 16.6831 12.2813ZM4.73367 3.26073L15.8815 3.29891L14.7896 9.64487L6.03277 9.66094L4.73367 3.26073ZM6.60972 15.5729C6.27284 15.5729 5.99792 15.2875 5.99792 14.9379C5.99792 14.5882 6.27284 14.3029 6.60972 14.3029C6.94659 14.3029 7.22152 14.5882 7.22152 14.9379C7.22152 15.1063 7.15706 15.2678 7.04232 15.3869C6.92759 15.506 6.77198 15.5729 6.60972 15.5729ZM12.9039 15.5729C12.567 15.5729 12.2921 15.2875 12.2921 14.9379C12.2921 14.5882 12.567 14.3029 12.9039 14.3029C13.2407 14.3029 13.5157 14.5882 13.5157 14.9379C13.5157 15.1063 13.4512 15.2678 13.3365 15.3869C13.2217 15.506 13.0661 15.5729 12.9039 15.5729Z" fill="black" />
                   </svg>
-                  <span className='badge rounded-full'>2</span>
+                  <span className={`rounded-full ${styles.badge}`}>2</span>
 
                 </span>
               </Link>
-              <div className='close-search-icon hidden'>
+              <div className={`hidden ${styles.closeSearchIcon}`}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
                   <path d="M18 33C26.25 33 33 26.25 33 18C33 9.75 26.25 3 18 3C9.75 3 3 9.75 3 18C3 26.25 9.75 33 18 33Z" stroke="#7A7A7A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   <path d="M13.7549 22.2449L22.2449 13.7549" stroke="#4D4D4D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

@@ -13,7 +13,7 @@ const Default = ({ children }: PropsWithChildren) => {
     <>
 		<div className={`${language == "ar" ? `${tajawalFont.className}` : `${nunitoFont.className}` } ${nunitoFont.className} `}>
 		  <Header />
-		  <main>{children}</main>
+		  	<main>{children}</main>
 		  <Footer />
 		</div>
     </>

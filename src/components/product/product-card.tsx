@@ -1,12 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import Image from 'next/image'
 import heart from '../../assets/images/svg/heart.svg';
 import styles from '../../styles/components/product/ProductCard.module.scss';
+import ProductSkeleton from '../product/product-skeleton';
+import Icon from '@/components/common/icons/icomoon';
 
 export default function ProductCard({ productData }:any) {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    if (productData) {
+      setTimeout(() => {
+        setLoading(false);
+      }, 3000);
+    }
+  }, [productData]);
 
   return (
     <div>
+      
+      {loading ? (
+        <ProductSkeleton />
+      ) : (
       <div className={`${styles.prdCard} ${styles.hasDiscount} block rounded-lg bg-white  dark:bg-neutral-700`}>
         <a href="">
           <div className={styles.productThumb}>
@@ -20,14 +34,13 @@ export default function ProductCard({ productData }:any) {
                 <span>New Arrival </span>
               </div>
               <div className={styles.heartIcon}>
-                <span>
-                  <Image
+                <Icon icon="icon-heart" className="iconHeartCustomClass" />
+                  {/* <Image
                     src={heart}
                     alt="heart Icon"
                     width={20}
                     height={18}
-                  />
-                </span>
+                  /> */}
               </div>
             </div>
           </div>
@@ -46,6 +59,7 @@ export default function ProductCard({ productData }:any) {
           </div>
         </a>
       </div>
+      )}
     </div>
   )
 }

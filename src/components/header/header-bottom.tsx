@@ -106,34 +106,48 @@ export default function HeaderBottom() {
   const handleLinkHover = () => {
     setIsHovered(false);
   };
-  const [isOpen, updateIsOpen] = useState("");
-
+  const [isOpen, setIsOpen] = useState("");
+  
+  const handleMobileSubMenu = (data:any) => {
+    if(document?.body?.classList?.contains('show-submenu')){
+      document.body.classList.remove('show-submenu');
+      setTimeout(() => {
+        setIsOpen(data);  
+      }, 500);
+    }else{
+      setIsOpen(data);
+      setTimeout(() => {
+        document.body.classList.add('show-submenu');  
+      }, (200));
+    }
+  }
+  
   return (
     <div
-      className={`${styles.headerBottomWrapper} header-bottom mb-10 lg:px-4`}
+      className={`header-bottom mb-10 lg:px-4`}
+      // id="headerBottom"
     >
       {isIPadMobileScreen && (
         <>
           <div
             className={`${styles.mblMenuHead} flex justify-between items-center px-3`}
           >
-            <div className="menu-arrow-left"></div>
-            <div className={styles.mblLogo}>
-              <Link href="">
-                <Image src={Logo} alt="" />
-              </Link>
+            <div className={`${styles.menuArrowLeft} menu-arrow-left`} onClick={()=>handleMobileSubMenu('')}>
+              <Image src={mblIcon} alt="" />
             </div>
-            <div className="close-menu">
-              <MenuCloser />
+            <div className={styles.mblLogo}>
+              <Image src={Logo} alt="" />
+            </div>
+            <div className="">
             </div>
           </div>
         </>
       )}
       <nav className="bg-white">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
-          <div className="w-full  navbar" id="navbar-default">
+          <div className={`w-full ${styles.navbar}`} id="navbar-default">
             <ul
-              className={`${styles.menuScroll} lg:flex relative flex-wrap md:w-full`}
+              className={`lg:flex relative flex-wrap md:w-full`}
             >
               {data.categories.map((category, index) => {
                 const urlr = category.slug;
@@ -141,11 +155,11 @@ export default function HeaderBottom() {
                 return (
                   <li
                     key={index}
-                    className={`${styles.catItem} lg:block flex justify-between items-center`}
-                    onMouseOver={() => updateIsOpen(currentMenu)}
-                    onFocus={() => updateIsOpen("")}
-                    onMouseLeave={() => updateIsOpen("")}
-                    onBlur={() => updateIsOpen("")}
+                    className="lg:block flex justify-between items-center"
+                    onMouseOver={() => (isDesktop)?setIsOpen(currentMenu):''}
+                    onFocus={() => (isDesktop)?setIsOpen(""):''}
+                    onMouseLeave={() => (isDesktop)?setIsOpen(""):''}
+                    onBlur={() => (isDesktop)?setIsOpen(""):''}
                   >
                     <Link
                       href={{
@@ -157,19 +171,19 @@ export default function HeaderBottom() {
                       {category.title}
                     </Link>
                     {isIPadMobileScreen && (
-                      <>
-                        <Image className="lg:hidden" src={mblIcon} alt="" />
-                      </>
+                      <span onClick={()=>handleMobileSubMenu(currentMenu)}>
+                        <Image src={mblIcon} alt="" />
+                      </span>
                     )}
                     {isOpen != "" && isOpen == currentMenu && (
                       <div
                         className={`${isOpen ? "active" : ""} ${
                           styles.subcategoryWrapper
-                        } ${styles.menuScroll} w-full`}
+                        } ${styles.menuScroll} w-full sub-category-wrapper`}
                       >
                         <div className="flex flex-wrap">
                           <div className="lg:w-3/12 w-full">
-                            <h6 className={styles.catHead}>{category.title}</h6>
+                            <h6>{category.title}</h6>
                             <ul className={styles.subCatList}>
                               <li>
                                 <Link href="#!">Blends</Link>
@@ -186,7 +200,7 @@ export default function HeaderBottom() {
                             className={`${styles.shopByBrandsWrapper} lg:w-9/12 w-full `}
                           >
                             <div className="lg:w-12/12">
-                              <h6 className={`${styles.shopByBrands} mb-5`}>
+                              <h6 className={`mb-5`}>
                                 Shop By Brands
                               </h6>
                             </div>

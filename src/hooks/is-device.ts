@@ -31,8 +31,6 @@ const useIsDevice = (device: any) => {
   const [windWidth, setWindWidth] = useState<any>(false);
 
   useEffect(() => {
-    // setWindWidth(checkDevice(device));
-    
     const updateMobile = () => {
       setWindWidth(checkDevice(device));
     }
@@ -41,7 +39,6 @@ const useIsDevice = (device: any) => {
     return () => {
       window.removeEventListener('resize', updateMobile)
     }
-
   }, [device]);
   
   return windWidth;
