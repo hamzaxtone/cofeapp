@@ -11,7 +11,7 @@ const Default = ({ children }: PropsWithChildren) => {
 	let language = router.locale;
   return (
     <>
-		<div className={`${language == "ar" ? `${tajawalFont.className}` : `${nunitoFont.className}` } ${nunitoFont.className} `}>
+		<div className={`${language == "ar" ? `${tajawalFont.className}` : `${nunitoFont.className}` } `}>
 		  <Header />
 		  	<main>{children}</main>
 		  <Footer />

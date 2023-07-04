@@ -23,6 +23,11 @@ export function checkDevice(device: any) {
         return (window?.innerWidth < 768) ? true : false;
       }
       break;
+    case 'isdesktop':
+      if (typeof window !== "undefined") {
+        return (window?.innerWidth > 768) ? true : false;
+      }
+      break;
   }
 
 }

@@ -12,8 +12,8 @@ import styles from '../../styles/home/GridSectionDeal.module.scss';
 
 export default function GridSectionDeal() {
   return (
-    <div className={`py-10 px-4 section ${styles.sectionGridDeal}`}>
-      <div className='max-w-screen-xl mx-auto'>
+    <div className={`py-10 -px-4 section ${styles.sectionGridDeal}`}>
+      <div className='container mx-auto'>
         <div className='grid lg:grid-cols-3 md:grid-cols-2  gap-4'>
           <div className={`p-4 bg-white rounded-xl ${styles.gridDealBx}`}>
             <h4 className='lg:text-2xl md:text-lg font-semibold mb-0.5'>More Reason to Shop</h4>

@@ -66,8 +66,8 @@ var settings = {
 };
 const Carousel = () => {
   return (
-    <div className={` mb-11 px-4 lg:mt-0 mt-8 banner-slider-wrp  ${styles.bannerSliderWrp}`}>
-      {/* <div className='max-w-screen-xl mx-auto '>
+    <div className={` mb-11 -px-4 lg:mt-0 mt-8 banner-slider-wrp  ${styles.bannerSliderWrp}`}>
+      {/* <div className='container mx-auto '>
         <div className={` ${styles.bannerSlide}`}>
           <Slider {...settings}>
             {data.banners.map((banner, index) => {
@@ -96,7 +96,7 @@ const Carousel = () => {
           </Slider>
         </div>
       </div> */}
-      <div className='max-w-screen-xl mx-auto'>
+      <div className='container mx-auto'>
         <div className={` ${styles.bannerSliderInner}`}>        
           <Slider {...settings}>
             <div className={` ${styles.bannerSlider}`}>

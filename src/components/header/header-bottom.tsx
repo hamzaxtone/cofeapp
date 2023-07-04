@@ -124,7 +124,7 @@ export default function HeaderBottom() {
   
   return (
     <div
-      className={`header-bottom mb-10 lg:px-4`}
+      className={`header-bottom mb-10 -lg:px-4`}
       // id="headerBottom"
     >
       {isIPadMobileScreen && (
@@ -144,7 +144,7 @@ export default function HeaderBottom() {
         </>
       )}
       <nav className="bg-white">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
+        <div className="container flex flex-wrap items-center justify-between mx-auto">
           <div className={`w-full ${styles.navbar}`} id="navbar-default">
             <ul
               className={`lg:flex relative flex-wrap md:w-full`}
@@ -186,13 +186,13 @@ export default function HeaderBottom() {
                             <h6>{category.title}</h6>
                             <ul className={styles.subCatList}>
                               <li>
-                                <Link href="#!">Blends</Link>
+                                <Link href="">Blends</Link>
                               </li>
                               <li>
-                                <Link href="#!">Specialty Coffee</Link>
+                                <Link href="">Specialty Coffee</Link>
                               </li>
                               <li>
-                                <Link href="#!">Drip Bags</Link>
+                                <Link href="">Drip Bags</Link>
                               </li>
                             </ul>
                           </div>
@@ -208,54 +208,54 @@ export default function HeaderBottom() {
                               <div className="lg:w-6/12 w-full">
                                 <div className="flex flex-wrap justify-between">
                                   <div className="lg:w-2/6 w mb-4">
-                                    <Link href="#!">
+                                    <Link href="">
                                       <Image src={moomilk} alt="" />
                                     </Link>
                                   </div>
                                   <div className="lg:w-2/6 w mb-4">
-                                    <Link href="#!">
+                                    <Link href="">
                                       <Image src={twGrams} alt="" />
                                     </Link>
                                   </div>
                                   <div className="lg:w-2/6 w mb-4">
-                                    <Link href="#!">
+                                    <Link href="">
                                       <Image src={kiaora} alt="" />
                                     </Link>
                                   </div>
                                   <div className="lg:w-2/6 w mb-4">
-                                    <Link href="#!">
+                                    <Link href="">
                                       <Image src={jumo} alt="" />
                                     </Link>
                                   </div>
                                   <div className="lg:w-2/6 w mb-4">
-                                    <Link href="#!">
+                                    <Link href="">
                                       <Image src={gloriaJeans} alt="" />
                                     </Link>
                                   </div>
                                   <div className="lg:w-2/6 w mb-4">
-                                    <Link href="#!">
+                                    <Link href="">
                                       <Image src={dunkin} alt="" />
                                     </Link>
                                   </div>
                                   <div className="lg:w-2/6 w mb-4">
-                                    <Link href="#!">
+                                    <Link href="">
                                       <Image src={walls} alt="" />
                                     </Link>
                                   </div>
                                   <div className="lg:w-2/6 w mb-4">
-                                    <Link href="#!">
+                                    <Link href="">
                                       <Image src={cbtl} alt="" />
                                     </Link>
                                   </div>
                                   <div className="lg:w-2/6 w mb-4">
-                                    <Link href="#!">
+                                    <Link href="">
                                       <Image src={caribou} alt="" />
                                     </Link>
                                   </div>
                                 </div>
                               </div>
                               <div className="lg:w-6/12 w-full grid sm:grid-cols-2 lg:gap-12 gap-2 lg:px-6">
-                                <Link href="#!">
+                                <Link href="">
                                   {isDesktop && (
                                     <Image
                                       src={coffeBeans}
@@ -279,7 +279,7 @@ export default function HeaderBottom() {
                                   )}
                                 </Link>
 
-                                <Link href="#!">
+                                <Link href="">
                                   {isDesktop && (
                                     <Image
                                       src={bestDeal}

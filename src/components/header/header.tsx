@@ -17,6 +17,7 @@ export default function Header() {
   const [inputValue, setInputValue] = useState('');
   const [searchActive, setSearchActive] = useState('');
   const isIPadMobileScreen = useIsDevice('ipad-mobile');
+  const lang = GetLang();
 
   const handleInputChange = (e: any) => {
     setInputValue(e.target.value);
@@ -32,51 +33,12 @@ export default function Header() {
     document.body.classList.remove(styles.searchFocusOpen, styles.searchActive);
   };
 
-  
-
-  // Function to check if the input field is empty
-  const isInputEmpty = inputValue.trim() === '';
-  if (!isInputEmpty) {
-    //document.body.classList.add('search-active');
-  }
-
-  const [mobile, setMobile] = useState(false);
-
-  useEffect(() => {
-    const updateMobile = () => {
-      setMobile(window.innerWidth < 1024 ? true : false);
-    }
-    updateMobile();
-    window.addEventListener('resize', updateMobile)
-    return () => {
-      window.removeEventListener('resize', updateMobile)
-    }
-  }, [])
-
-
-  // const [width, setWidth]   = useState(window.innerWidth);
-  // const updateDimensions = () => {
-  //     setWidth(window.innerWidth);
-  // }
-  // useEffect(() => {
-  //     window.addEventListener("resize", updateDimensions);
-  //     return () => window.removeEventListener("resize", updateDimensions);
-  // }, []);
-
-
-  {/* Conditional Rendering */ }
-
-
-
-const lang = GetLang();
-
   return (
-    <div className={`bg-white ${styles.header}`}>
+    <div>
       <HeaderTop />
-      
       <header className={` mt-2.5 mb-2.5 lg:mt-6 lg:mb-7 relative  ${styles.headerMiddle}`}>
-        <div className={`px-4  ${styles.headerMiddleInner}`}>
-          <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto ">
+        <div className={`px-4-  ${styles.headerMiddleInner}`}>
+          <div className="container flex flex-wrap items-center justify-between mx-auto ">
             <div className={`flex flex-wrap items-center  ${styles.headerLeft }`}>
               <div className="lg:hidden flex items-center" >
                 
@@ -149,7 +111,7 @@ const lang = GetLang();
                   </div>
                   <div className={`${styles.searchScroll}`}>
                     <div className={`md:mb-5 mb-2  rounded-xl  ${styles.searchItem}`}>
-                      <Link href="#" className={`flex md:py-1 md:px-4`}>
+                      <Link href="" className={`flex md:py-1 md:px-4`}>
                         <div className={`rounded-xl flex items-center ${styles.searchItemImage}`}>
                           <Image
                             src={productImageSearch}
@@ -168,7 +130,7 @@ const lang = GetLang();
                       </Link>
                     </div>
                     <div className={`md:mb-5 mb-2 rounded-xl ${styles.searchItem}`}>
-                      <Link href="#" className={`flex md:py-1 md:px-4`}>
+                      <Link href="" className={`flex md:py-1 md:px-4-`}>
                         <div className={`rounded-xl flex items-center ${styles.searchItemImage}`}>
                           <Image
                             src={productImageSearch}
@@ -190,16 +152,16 @@ const lang = GetLang();
                   <div className={`mt-5 md:mt-6 ${styles.searchCat}`}>
                     <h4 className={`text-lg md:mb-5 mb-5 md:pt-5 md:pt-3.5 font-semibold ${styles.searchTitle}`}>Search by Category</h4>
                     <div className={`md:flex flex-wrap  ${styles.searchCatBadge}`}>
-                      <Link href="#">
+                      <Link href="">
                         <span className={`md:text-base text-sm rounded-full py-2 px-4`}>Coffee Beans</span>
                       </Link>
-                      <Link href="#">
+                      <Link href="">
                         <span className={`md:text-base text-sm rounded-full py-2 px-4`}>Capsules</span>
                       </Link>
-                      <Link href="#">
+                      <Link href="">
                         <span className={`md:text-base text-sm rounded-full py-2 px-4`}>Grinders</span>
                       </Link>
-                      <Link href="#">
+                      <Link href="">
                         <span className={`md:text-base text-sm rounded-full py-2 px-4`}>Tea</span>
                       </Link>
                     </div>
@@ -215,7 +177,7 @@ const lang = GetLang();
                   <path d="M10 18C9.86188 17.9996 9.7278 17.9535 9.61869 17.869C6.14313 15.175 3.74899 12.8551 2.07372 10.5663C-0.0641191 7.64152 -0.551698 4.9412 0.623491 2.54023C1.46113 0.825247 3.86776 -0.577919 6.68072 0.239036C8.02189 0.625523 9.19205 1.45436 10 2.59012C10.808 1.45436 11.9781 0.625523 13.3193 0.239036C16.126 -0.565446 18.5389 0.825247 19.3765 2.54023C20.5517 4.9412 20.0641 7.64152 17.9263 10.5663C16.251 12.8551 13.8569 15.175 10.3813 17.869C10.2722 17.9535 10.1381 17.9996 10 18ZM5.08046 1.25555C4.41113 1.22956 3.74735 1.38592 3.16036 1.70784C2.57338 2.02976 2.08535 2.50508 1.74867 3.08279C0.779767 5.06593 1.21734 7.27357 3.08639 9.82422C5.07269 12.3802 7.39859 14.6545 10 16.5844C12.601 14.6564 14.9269 12.3842 16.9136 9.83045C18.7889 7.27357 19.2202 5.06593 18.2513 3.08902C17.6262 1.84176 15.7509 0.850192 13.6631 1.4364C12.9936 1.63378 12.373 1.96881 11.8412 2.41991C11.3093 2.87102 10.8781 3.42822 10.5751 4.05565C10.528 4.17003 10.4479 4.26786 10.3449 4.33671C10.242 4.40556 10.1208 4.44232 9.99687 4.44232C9.87293 4.44232 9.75178 4.40556 9.64882 4.33671C9.54587 4.26786 9.46575 4.17003 9.41866 4.05565C9.11797 3.42665 8.68743 2.86815 8.15526 2.41676C7.62309 1.96537 7.0013 1.63129 6.33066 1.4364C5.92433 1.31866 5.50358 1.2578 5.08046 1.25555Z" fill="#4D4D4D" />
                 </svg>
               </Link>
-              <Link href="">
+              <Link href="/login">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="#4D4D4D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26003 15 3.41003 18.13 3.41003 22" stroke="#4D4D4D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -244,15 +206,7 @@ const lang = GetLang();
           </div>
         </div>
       </header>
-      {/* <div>
-        {
-          mobile ? (mobileMenu ? <MobileMenu /> : '') : <HeaderBottom />
-        }
-      </div> */}
-      {/* <MobileMenu /> */}
       <HeaderBottom />
-
-
     </div>
   )
 }

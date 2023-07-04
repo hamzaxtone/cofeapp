@@ -9,7 +9,7 @@ export default function FindBestDeal() {
   return (
     <>
       <div className='section-best-deal section'>
-        <div className='max-w-screen-xl mx-auto'>
+        <div className='container mx-auto'>
           {/* <div className='grid md:grid-cols-5 grid-cols-1  gap-4 items-center'>
             <div className='best-deal-left md:col-span-3'>
               <h3 className='lg:text-2xl md:text-xl text-lg font-semibold'>Find the best Deal</h3>

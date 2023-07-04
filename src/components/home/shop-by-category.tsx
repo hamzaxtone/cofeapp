@@ -111,8 +111,8 @@ export default function ShopByCategory(props : any) {
     ]
   };
   return (
-    <div className={`${styles.ShopByCategory} section px-4 mbl-shop-by-cat`}>
-		<div className="max-w-screen-xl mx-auto">
+    <div className={`${styles.ShopByCategory} section -px-4 mbl-shop-by-cat`}>
+		<div className="container mx-auto">
       <div className="flex justify-between w-full items-center head-sec">
         <h2 className='section_title my-0'>{props.sectionTitle}</h2>
       </div>

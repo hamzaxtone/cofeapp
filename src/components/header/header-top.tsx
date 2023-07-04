@@ -27,8 +27,8 @@ export default function HeaderTop() {
   const lang = GetLang();
 
   return (
-    <div className={`px-4  ${styles.headerTop}`}>
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
+    <div className={`-px-4  ${styles.headerTop}`}>
+      <div className="container flex flex-wrap items-center justify-between mx-auto">
         <Menu as="div" className="relative inline-block text-left ">
           <Menu.Button className="flex items-center w-full justify-center gap-x-1.5 font-semibold text-xs">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">

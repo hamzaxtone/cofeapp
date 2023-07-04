@@ -101,8 +101,8 @@ import {
         <div className={`${styles.slider}`}>
           <div className={`${styles.slider__track}`} ></div>
           <div ref={range} className={`${styles.slider__range}`} ></div>
-          <div className={`${styles.slider__left_value}`} >{minVal}</div>
-          <div className={`${styles.slider__right_value}`} >{maxVal}</div>
+          {/* <div className={`${styles.slider__left_value}`} >{minVal}</div>
+          <div className={`${styles.slider__right_value}`} >{maxVal}</div> */}
         </div>
       </div>
     );

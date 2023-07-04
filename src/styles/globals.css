@@ -2,24 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-}
-
 .slick-prev,
 .slick-next {
   z-index: 1;
@@ -629,5 +611,205 @@ html[lang="ar"] .new-arrival {
   }
   .mbl-shop-by-cat .categoryIconGridItem .cat_title{
     font-size: 14px;
+  }
+}
+
+
+.container {
+  max-width: 1325px;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.quantitySelector button.disabled i{
+  color: #979797;
+  cursor: not-allowed;
+}
+
+.dots-slide-custom .slick-dots {
+  bottom: 12px;
+}
+.dots-slide-custom .slick-dots .slick-list,
+.dots-slide-custom .slick-dots li,
+.dots-slide-custom .slick-dots li button,
+.dots-slide-custom .slick-dots li button:before{
+    width: 9px;
+    height: 9px;
+}
+.dots-slide-custom .slick-dots .slick-list{
+  margin: 0 7px;
+}
+.dots-slide-custom .slick-dots li button:before{
+  line-height: 9px;
+  font-size: initial;
+  opacity: 1;
+  color: #E8E8E8;
+}
+
+.dots-slide-custom .slick-dots li.slick-active button:before{
+  color: #6BD9D0;
+
+}
+
+.phoneNumberWrp .react-tel-input .special-label{
+  display: none;
+}
+.phoneNumberWrp .react-tel-input .selected-flag {
+  background-color: #F7F7F7;
+  border: 1px solid #EAEAEA;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-color: #D5D5D5;
+  border-right-color: #EAEAEA;
+  width: 80px;
+  padding: 0 24px 0 16px;
+}
+.phoneNumberWrp .react-tel-input .form-control {
+  border-color: #D5D5D5;
+  border-radius: 8px;
+  padding: 15px 0 15px 93px;
+  color: #212121;
+  font-size: 16px;
+  font-family: '__Nunito_e08f88', '__Nunito_Fallback_e08f88';
+  width: 100%;
+}
+.phoneNumberWrp .react-tel-input .form-control:hover{
+  border-color: #D5D5D5;
+}
+.phoneNumberWrp .react-tel-input .selected-flag .flag .arrow {
+  right: -35px;
+  left: auto;
+  display: inline-block;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 8px;
+  height: 8px;
+  transform: rotate(45deg);
+  border-left: transparent;
+  border-top: transparent;
+  top: -2px;
+}
+.phoneNumberWrp .react-tel-input .selected-flag .flag .arrow.up{
+  transform: rotate(-135deg);
+  top: 2px;
+}
+.phoneNumberWrp .react-tel-input .country-list {
+  width: 478px;
+  border: 1px solid #D5D5D5;
+  box-shadow: 1px 2px 18px rgba(0,0,0,0.1);
+  margin-top: 4px;
+}
+.phoneNumberWrp .react-tel-input .country-list .search-box {
+  width: 98%;
+  margin-left: 0;
+  border-color: #D5D5D5;
+  padding: 8px;
+}
+html[lang=ar] .phoneNumberWrp .react-tel-input .selected-flag{
+    padding: 0 16px 0 24px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-right-color: #D5D5D5;
+    border-left-color: #EAEAEA;
+
+}
+html[lang=ar] .phoneNumberWrp .react-tel-input .selected-flag .flag .arrow {
+  right: auto;
+  left: -35px;
+}
+html[lang=ar] .phoneNumberWrp .react-tel-input .form-control {
+  padding-right: 93px;
+  padding-left: 15px;
+}
+
+html[lang=ar]  .slick-list {
+  direction: ltr;
+}
+    
+
+/* radio style css */
+/* The container */
+.radio-style-1 .container {
+  display: block;
+  position: relative;
+  padding-left: 40px;
+  /* margin-bottom: 12px; */
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio-style-1 .container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.radio-style-1 .checkmark {
+  position: absolute;
+  transform: translate(-10%, 0);
+  top: 10%;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid #08BFB0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-style-1 .container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-style-1 .container input:checked ~ .checkmark {
+  background-color: #fff;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radio-style-1 .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-style-1 .container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-style-1 .container .checkmark:after {
+  width: 19px;
+  height: 19px;
+  margin: 2px;
+	border-radius: 50%;
+	background: #08BFB0;
+}
+/* radio style css */
+
+
+@media(max-width:1023px){
+  .radio-style-1 .container{
+    padding-left: 0; 
+    padding-right: 40px;
+  }
+  .radio-style-1 .checkmark{
+    left: unset;
+    right: 0;
   }
 }

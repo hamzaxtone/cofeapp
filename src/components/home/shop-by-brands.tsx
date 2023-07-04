@@ -107,8 +107,8 @@ export default function ShopByBrands(props : any) {
     ]
   };
   return (
-    <div className="ShopByCategory section px-4 ">
-		<div className="max-w-screen-xl mx-auto">
+    <div className="ShopByCategory section -px-4 ">
+		<div className="container mx-auto">
       <div className="flex justify-between w-full items-center head-sec">
         <h2 className='section_title'>{props.sectionTitle}</h2>
         <Link href="" className="view-all">

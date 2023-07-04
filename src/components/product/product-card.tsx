@@ -4,6 +4,7 @@ import heart from '../../assets/images/svg/heart.svg';
 import styles from '../../styles/components/product/ProductCard.module.scss';
 import ProductSkeleton from '../product/product-skeleton';
 import Icon from '@/components/common/icons/icomoon';
+import Link from "next/link";
 
 export default function ProductCard({ productData }:any) {
   const [loading, setLoading] = useState(true);
@@ -22,7 +23,7 @@ export default function ProductCard({ productData }:any) {
         <ProductSkeleton />
       ) : (
       <div className={`${styles.prdCard} ${styles.hasDiscount} block rounded-lg bg-white  dark:bg-neutral-700`}>
-        <a href="">
+        <Link href="/product-detail">
           <div className={styles.productThumb}>
             <Image
               className="rounded-t-lg text-center"
@@ -57,7 +58,7 @@ export default function ProductCard({ productData }:any) {
              <span className={styles.newPrice}>{productData.priceTag}</span> 
             </p>
           </div>
-        </a>
+        </Link>
       </div>
       )}
     </div>

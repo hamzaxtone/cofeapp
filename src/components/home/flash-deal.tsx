@@ -12,8 +12,8 @@ import styles from '../../styles/home/FlashDeal.module.scss';
 
 export default function FlashDeal() {
   return (
-    <div className='section-flash-deal section px-4'>
-      <div className='max-w-screen-xl mx-auto'>
+    <div className='section-flash-deal section -px-4'>
+      <div className='container mx-auto'>
         <div className="grid grid-cols-2  gap-4">
           <div className="left">
              <Image src={bannerLeft} className=' md:block hidden' alt={''} loading="eager" priority={true} />

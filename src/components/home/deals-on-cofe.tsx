@@ -52,8 +52,8 @@ export default function DealsOnCofe() {
   };
   return (
     <>
-      <div className='section section-deal-on-cofee px-4'>
-        <div className='max-w-screen-xl mx-auto'>
+      <div className='section section-deal-on-cofee -px-4'>
+        <div className='container mx-auto'>
             <h2 className='section_title'>Deals only on COFE</h2>
             <div className='m-10 deals-carousel main-wrapper'>
            
