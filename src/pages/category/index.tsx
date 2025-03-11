@@ -437,7 +437,7 @@ const Category: MyPage = () => {
 
             </div>
             <div className={`w-full ${styles.taxonomiesList}`}>
-              {data.taxonomies.map((taxonomy, index) => {
+              {data.taxonomies.map((taxonomy:any, index) => {
                 return (
                   <div key={taxonomy.title} className={`${styles.taxonomyItem} ${styles.taxonomyItemActive}`}>
                     <h4 className={`text-2xl font-semibold flex items-center justify-between ${styles.taxtTitle}`}>{taxonomy.title}
@@ -446,7 +446,7 @@ const Category: MyPage = () => {
                       </svg>
                     </h4>
                     <ul className={`${styles.taxonomyParentItems}`}>
-                      {taxonomy.parentCategories.map((taxonomyParent, index2) => {
+                      {taxonomy.parentCategories.map((taxonomyParent:any, index2) => {
                         return (
                           <li key={taxonomyParent.title} className={`${styles.taxonomyParentChildren}`}>
                             <span className={`text-xl mt-3.5 mb-3.5 block ${styles.taxonomyParentTitle}`}>{taxonomyParent.title}</span>
