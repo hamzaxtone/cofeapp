@@ -446,12 +446,12 @@ const Category: MyPage = () => {
                       </svg>
                     </h4>
                     <ul className={`${styles.taxonomyParentItems}`}>
-                      {taxonomy.parentCategories.map((taxonomyParent:any, index2) => {
+                      {taxonomy.parentCategories.map((taxonomyParent:any, index2:number) => {
                         return (
                           <li key={taxonomyParent.title} className={`${styles.taxonomyParentChildren}`}>
                             <span className={`text-xl mt-3.5 mb-3.5 block ${styles.taxonomyParentTitle}`}>{taxonomyParent.title}</span>
                             <ul className={`${styles.taxonomyItemsInner}`}>
-                              {taxonomyParent.childCategories.map((childCategory, index3) => {
+                              {taxonomyParent.childCategories.map((childCategory:any, index3:number) => {
                                 return (
                                   <li key={childCategory.title}>
                                     <label className='flex items-center custom-checkbox1 mb-2.5'>
