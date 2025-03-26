@@ -8,7 +8,7 @@ import Image from 'next/image';
 // svg
 import profileAvatar from '../../../../src/assets/profile-avatar.svg'
 import profile from '../../../../src/assets/profile.svg'
-import orders from '../../../../src/assets/orders.svg'
+// import orders from '../../../../src/assets/orders.svg'
 import home from '../../../../src/assets/address.svg'
 import logout from '../../../../src/assets/logout.svg'
 import useIsDevice from "@/hooks/is-device";
@@ -69,7 +69,7 @@ const LeftSidebar: React.FC<ChildProps> = (props:any) => {
                 <div className={`cursor-pointer flex items-center py-[12px] px-[8px] rounded-[8px]`}>
                     {/* <Icon icon="icon-heart" className="text-[#444B54] text-[10px] basis-[23px] items-center flex justify-center " /> */}
                     <span className='w-[25px]'>
-                        <Image  src={orders} alt="orders" />
+{/*                         <Image  src={orders} alt="orders" /> */}
                     </span>
                     <span className='text-[#212121] text-[18px] px-[8px]'>Orders</span>
                 </div>
